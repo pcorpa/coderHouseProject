@@ -2,8 +2,9 @@ import { Text, StyleSheet, Pressable, View } from "react-native";
 import React, { useState } from "react";
 import { COLORS } from "../constants";
 
-export const Item = ({ onPress, children: title }) => {
-  const [selected, setSelected] = useState(false);
+export const Item = ({ onPress, children: title, selected, checkboxOnPress }) => {
+  
+  
   const pressableCheckStyleHandeling = selected
     ? styles.pressableCheckSelected
     : styles.pressableCheck;
@@ -18,7 +19,7 @@ export const Item = ({ onPress, children: title }) => {
     <View style={styles.container}>
       <Pressable
         style={pressableCheckStyleHandeling}
-        onPress={() => setSelected(!selected)}
+        onPress={() => checkboxOnPress(!selected)}
       />
       <Pressable style={itemStyleHandeling} onPress={onPress}>
         <Text style={itemTextStyleHandeling}>{title}</Text>
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     borderWidth: 1,
     borderRadius: "100%",
-    borderColor: COLORS.secondary.third,
+    borderColor: COLORS.secondary.second,
     marginTop: 10,
   },
   pressableCheckSelected: {
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
     borderRadius: "100%",
-    backgroundColor: COLORS.secondary.third,
+    backgroundColor: COLORS.secondary.fourth,
     marginTop: 10,
   },
   pressableItem: {
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "85%",
     borderRadius: 15,
-    backgroundColor: COLORS.secondary.third,
+    backgroundColor: COLORS.secondary.fourth,
     marginTop: 10,
     marginLeft: 20,
   },
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     textAlign: "left",
     fontWeight: 600,
-    color: COLORS.secondary.fourth,
+    color: COLORS.secondary.fifth,
   },
   pressableTextSelected: {
     paddingHorizontal: 20,

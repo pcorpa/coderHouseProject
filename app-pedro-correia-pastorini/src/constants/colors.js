@@ -13,4 +13,10 @@ export const COLORS = {
     fourth: "#54633D",
     fifth: "#313D1F",
   },
+  warnings: {
+    first: "#fecaca",
+    second: "#f87171",
+    third: "#dc2626",
+  },
+  black: "#0f0f0f",
 };
